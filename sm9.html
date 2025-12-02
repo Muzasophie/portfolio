@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Muzalevska Sofiya – Costume Designer Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #000000;
+            --bg2: #111111;
+            --accent: #e50914;
+            --text: #f5f5f5;
+            --muted: #aaaaaa;
+            --border: #2a2a35;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .page {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 80px 24px 80px;
+        }
+
+        /* ======================= */
+        /* LANGUAGE SWITCHER       */
+        /* ======================= */
+
+        .lang-switcher {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 10px;
+            background: rgba(10, 10, 12, 0.95);
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(6px);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
+        .lang-switcher span {
+            color: var(--muted);
+        }
+
+        .lang-btn {
+            border: none;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: transparent;
+            color: var(--muted);
+            cursor: pointer;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+        }
+
+        .lang-btn.active {
+            background: var(--accent);
+            color: #ffffff;
+        }
+
+        .lang-block {
+            display: none;
+        }
+
+        .lang-block.active {
+            display: block;
+        }
+
+        /* ======================= */
+        /* HEADER                  */
+        /* ======================= */
+
+        header.header {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+            gap: 40px;
+            padding-bottom: 72px;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(180deg, #000000, #111111 70%);
+        }
+
+        .header-title h2 {
+            color: var(--accent);
+            font-size: 13px;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            margin: 0 0 8px;
+        }
+
+        .header-title h1 {
+            margin: 0 0 24px;
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .header-title p {
+            color: var(--muted);
+            font-size: 15px;
+            margin: 0 0 20px;
+            max-width: 600px;
+        }
+
+        .header-contacts div {
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .header-contacts div:last-child {
+            margin-bottom: 0;
+        }
+
+        .header-left-bar {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .header-left-bar::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            border-radius: 999px;
+            background: linear-gradient(180deg, var(--accent), #7b0208);
+        }
+
+        .portrait-wrapper {
+            position: relative;
+        }
+
+        .portrait-img {
+            width: 100%;
+            border-radius: 14px;
+            border: 1px solid #222;
+            box-shadow: 0 0 45px rgba(0, 0, 0, 0.8);
+            display: block;
+        }
+
+        .portrait-overlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 46%;
+            border-radius: 14px;
+            background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.95));
+        }
+
+        .tagline {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 18px;
+            text-align: center;
+            font-size: 11px;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        /* ======================= */
+        /* SECTIONS                */
+        /* ======================= */
+
+        .section {
+            padding: 48px 0 8px;
+            border-bottom: 1px solid #15151e;
+        }
+
+        .section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+        }
+
+        .section-title span {
+            color: var(--accent);
+        }
+
+        .section-subtitle {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .grid-two {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 28px;
+        }
+
+        .list-block h3 {
+            margin: 0 0 10px;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+        }
+
+        .list-block ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .list-block li {
+            margin-bottom: 6px;
+        }
+
+        .list-block p {
+            font-size: 14px;
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .category-title {
+            margin: 32px 0 12px;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: #ffffff;
+        }
+
+        /* ======================= */
+        /* IMAGE GRID              */
+        /* ======================= */
+
+        .grid-images {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .grid-images img {
+            width: 100%;
+            display: block;
+            border-radius: 8px;
+            object-fit: cover;
+            aspect-ratio: 4 / 3;
+            cursor: pointer;
+            transition: transform 0.18s ease-out, box-shadow 0.18s ease-out;
+            box-shadow: 0 0 16px rgba(0, 0, 0, 0.65);
+        }
+
+        .grid-images img:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 0 24px rgba(0, 0, 0, 0.9);
+        }
+
+        /* ======================= */
+        /* FOOTER                  */
+        /* ======================= */
+
+        footer {
+            margin-top: 48px;
+            padding-top: 16px;
+            border-top: 1px solid #20202a;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            font-size: 12px;
+            color: #bbbbbb;
+            flex-wrap: wrap;
+        }
+
+        footer a {
+            color: #bbbbbb;
+        }
+
+        /* ======================= */
+        /* LIGHTBOX                */
+        /* ======================= */
+
+        .lightbox-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1500;
+        }
+
+        .lightbox-overlay.active {
+            display: flex;
+        }
+
+        .lightbox-overlay img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 10px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 14px;
+            right: 20px;
+            font-size: 34px;
+            cursor: pointer;
+            color: #ffffff;
+            font-weight: 300;
+        }
+
+        .lightbox-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 44px;
+            color: #ffffff;
+            cursor: pointer;
+            user-select: none;
+            padding: 10px 14px;
+        }
+
+        .lightbox-arrow.left {
+            left: 24px;
+        }
+
+        .lightbox-arrow.right {
+            right: 24px;
+        }
+
+        /* ======================= */
+        /* RESPONSIVE              */
+        /* ======================= */
+
+        @media (max-width: 960px) {
+            .page {
+                padding: 70px 18px 60px;
+            }
+
+            header.header {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                padding-bottom: 48px;
+            }
+
+            .header-title h1 {
+                font-size: 32px;
+            }
+
+            .header-title p {
+                font-size: 14px;
+            }
+
+            .portrait-wrapper {
+                max-width: 420px;
+                margin: 0 auto;
+            }
+
+            .grid-two {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-images {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page {
+                padding: 70px 14px 50px;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .section-title {
+                font-size: 20px;
+                letter-spacing: 0.18em;
+            }
+
+            .grid-images {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .lang-switcher {
+                top: 10px;
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .grid-images {
+                grid-template-columns: 1fr;
+            }
+
+            .header-title h1 {
+                font-size: 26px;
+            }
+
+            .tagline {
+                font-size: 9px;
+                letter-spacing: 0.22em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="lang-switcher">
+    <span>Language</span>
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="ru">RU</button>
+</div>
+
+<!-- =============== ENGLISH VERSION =============== -->
+<div class="lang-block active" id="lang-en">
+    <div class="page">
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-title header-left-bar">
+                <h2>COSTUME DESIGNER</h2>
+                <h1>Muzalevska Sofiya</h1>
+
+                <p>
+                    Costume designer with extensive international experience in feature films,
+                    theatre, commercial projects and stage productions.
+                </p>
+
+                <div class="header-contacts">
+                    <div>Serbia · Available for international productions</div>
+                    <div>Holding work permits for: USA, Canada, European Union, and the Balkans</div>
+                    <div>Email: <a href="mailto:muzasophie07@gmail.com">muzasophie07@gmail.com</a></div>
+                    <div>Phone (RS): +381 61 291 65 22</div>
+                    <div>WhatsApp / Telegram: +7 911 167 53 41</div>
+                    <div>Instagram: <a href="https://instagram.com/muzasophie" target="_blank">@muzasophie</a></div>
+                    <div>YouTube:
+                        <a href="https://www.youtube.com/playlist?list=PLxXoCrSmb41ChRIPRiOn4FfgVsexII0sk" target="_blank">
+                            Portfolio playlist
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portrait-wrapper">
+                <!-- portrait.jpg должен лежать в папке img/ -->
+                <img src="img/portrait.jpg" alt="Muzalevska Sofiya portrait" class="portrait-img">
+                <div class="portrait-overlay"></div>
+                <div class="tagline">FILM · THEATRE · COMMERCIAL · LIVE SHOWS</div>
+            </div>
+        </header>
+
+        <!-- FILMOGRAPHY -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-title"><span>Film</span>ography</div>
+                <div class="section-subtitle">Selected works</div>
+            </div>
+
+            <div class="grid-two">
+                <div class="list-block">
+                    <h3>Feature films</h3>
+                    <ul>
+                        <li>2025 – MINOTAUR (Latvia), dir. Andrey Zvyagintsev · DOP M. Krichman</li>
+                        <li>2024 – Ultima Thule (Serbia), dir. Olga Pinson · DOP M. Krichman</li>
+                        <li>2023 – Masks (Serbia), dir. K. Pchelintseva</li>
+                        <li>2021 – Tiger-3 (India), dir. Maneesh Sharma</li>
+                        <li>2021 – Crime and Punishment (UK), dir. Enni Red</li>
+                        <li>2019 – Shadow of the Star, dir. D. Gubarev</li>
+                        <li>2019 – Buran, dir. A. Askarov</li>
+                        <li>2019 – To Feel, dir. V. Saltykov</li>
+                        <li>2018 – Sky is Measured in Miles, dir. K. Buslov · DOP M. Efros</li>
+                        <li>2018 – I’m Going to the Neva (MIR Channel)</li>
+                        <li>2017 – Tanks, dir. K. Druzhinin · DOP D. Trifonov</li>
+                        <li>2017 – Where the Sea Flows, dir. V. Saltykov · DOP M. Efros</li>
+                        <li>2016 – Overtaking Time, dir. L. Plyaskin</li>
+                        <li>2014 – Diggers, dir. G. Kornev · G. Egorov</li>
+                        <li>2014 – Icarus, dir. V. Saltykov · DOP M.Efros</li>
+                    </ul>
+                </div>
+
+                <div class="list-block">
+                    <h3>TV projects</h3>
+                    <ul>
+                        <li>2017 – Arctic Forces, TNT · dir. D. Iosifov · DOP I. Gudkov</li>
+                        <li>2017 – Don’t Tell Anyone, Russia · dir. D. Sorokin · DOP G. Georgiev</li>
+                        <li>2015 – It Doesn’t Get Better, Channel One · dir. E. Semenov · DOP A. Vakorin</li>
+                        <li>2015 – New Year’s Happiness, NTV · dir. I. Kazankov · DOP G. Georgiev</li>
+                        <li>2013 – Headhunter · dir. S. Malyugov · DOP V. Gonchar</li>
+                        <li>2013 – Letters on Glass · dir. R. Gritskova</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- THEATRE -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-title"><span>The</span>atre</div>
+                <div class="section-subtitle">Opera & drama productions</div>
+            </div>
+
+            <div class="grid-two">
+                <div class="list-block">
+                    <h3>Selected productions</h3>
+                    <ul>
+                        <li>Obična priča (Serbia), dir. Kirill Serebrennikov</li>
+                        <li>Mürder unter uns (Switzerland), dir. Eberhard Köhler · Stadttheater Bern</li>
+                        <li>Drunks, dir. Andrey Moguchy · BDT G.A. Tovstonogov</li>
+                        <li>The Tsar's Bride (opera), dir. A. Moguchy · Mikhailovsky Theatre</li>
+                        <li>Freak, dir. D. Korogodsky · Theatre of Generations</li>
+                        <li>Confirm That You Are Human, dir. V. Levitsky · Theatre of Generations</li>
+                    </ul>
+                </div>
+
+                <div class="list-block">
+                    <h3>Stage approach</h3>
+                    <p>
+                        From chamber performances to main city opera stages,
+                        Sofiya creates expressive silhouettes, fabric worlds and character-driven designs,
+                        collaborating closely with directors, choreographers and lighting teams.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMMERCIAL & EVENTS -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-title"><span>Com</span>mercial</div>
+                <div class="section-subtitle">Brands, campaigns & large-scale live events</div>
+            </div>
+
+            <div class="grid-two">
+                <div class="list-block">
+                    <h3>Commercial videos</h3>
+                    <ul>
+                        <li>SkyFrame (USA)</li>
+                        <li>Sber</li>
+                        <li>IQOS</li>
+                        <li>Naked Hearts Foundation</li>
+                        <li>Agusha</li>
+                        <li>Sportlife Clubs Network</li>
+                        <li>Slavyanka - Confectionery Concern</li>
+                        <li>G-Energy · Gazprom</li>
+                        <li>FIFA 2018</li>
+                        <li>Estel Professional</li>
+                        <li>Gazpromneft Shelf</li>
+                        <li>GrandExpress Train</li>
+                        <li>Four Seasons Hotels</li>
+                        <li>Sogaz Clinic</li>
+                        <li>Ergoferon</li>
+                    </ul>
+                </div>
+
+                <div class="list-block">
+                    <h3>Events</h3>
+                    <ul>
+                        <li>Scarlet Sails – multi-stage live show · 2018–2022</li>
+                        <li>Scarlet Sails 2019 – Best Event Awards World winner</li>
+                        <li>Babkin's Fairy Tales – Nadezhda Babkina Theatre of Russian Song · 2021</li>
+                        <li>Kremlin Jubilee Concert – Stas Mikhailov · 2019</li>
+                        <li>Christina Aguilera – The X Tour · European tour 2019</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- VISUAL PORTFOLIO -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-title"><span>Visual</span> portfolio</div>
+                <div class="section-subtitle">Selected categories</div>
+            </div>
+
+            <!-- Commercial -->
+            <h3 class="category-title">Commercial</h3>
+            <div class="grid-images">
+                <img src="img/commercial/img01.jpg" alt="">
+                <img src="img/commercial/img02.jpg" alt="">
+                <img src="img/commercial/img03.jpg" alt="">
+                <img src="img/commercial/img04.jpg" alt="">
+            </div>
+
+            <!-- Theatre -->
+            <h3 class="category-title">Theatre & Opera</h3>
+            <div class="grid-images">
+                <img src="img/theater/img01.jpg" alt="">
+                <img src="img/theater/img02.jpg" alt="">
+                <img src="img/theater/img03.jpg" alt="">
+                <img src="img/theater/img04.jpg" alt="">
+                <img src="img/theater/img05.jpg" alt="">
+                <img src="img/theater/img06.jpg" alt="">
+                <img src="img/theater/img07.jpg" alt="">
+                <img src="img/theater/img08.jpg" alt="">
+                <img src="img/theater/img09.jpg" alt="">
+            </div>
+
+            <!-- Fashion -->
+            <h3 class="category-title">Fashion</h3>
+            <div class="grid-images">
+                <img src="img/fashion/img01.jpg" alt="">
+                <img src="img/fashion/img02.jpg" alt="">
+                <img src="img/fashion/img03.jpg" alt="">
+                <img src="img/fashion/img04.jpg" alt="">
+                <img src="img/fashion/img05.jpg" alt="">
+                <img src="img/fashion/img06.jpg" alt="">
+                <img src="img/fashion/img07.jpg" alt="">
+            </div>
+
+            <!-- Historical -->
+            <h3 class="category-title">Historical Movies</h3>
+            <div class="grid-images">
+                <img src="img/historical/img01.jpg" alt="">
+                <img src="img/historical/img02.jpg" alt="">
+                <img src="img/historical/img03.jpg" alt="">
+                <img src="img/historical/img04.jpg" alt="">
+                <img src="img/historical/img05.jpg" alt="">
+                <img src="img/historical/img06.jpg" alt="">
+                <img src="img/historical/img07.jpg" alt="">
+                <img src="img/historical/img08.jpg" alt="">
+                <img src="img/historical/img09.jpg" alt="">
+                <img src="img/historical/img10.jpg" alt="">
+                <img src="img/historical/img11.jpg" alt="">
+                <img src="img/historical/img12.jpg" alt="">
+                <img src="img/historical/img13.jpg" alt="">
+                <img src="img/historical/img14.jpg" alt="">
+                <img src="img/historical/img15.jpg" alt="">
+                <img src="img/historical/img16.jpg" alt="">
+                <img src="img/historical/img17.jpg" alt="">
+                <img src="img/historical/img18.jpg" alt="">
+            </div>
+
+            <!-- Military -->
+            <h3 class="category-title">Military Costumes</h3>
+            <div class="grid-images">
+                <img src="img/military/img01.jpg" alt="">
+                <img src="img/military/img02.jpg" alt="">
+                <img src="img/military/img03.jpg" alt="">
+                <img src="img/military/img04.jpg" alt="">
+                <img src="img/military/img05.jpg" alt="">
+                <img src="img/military/img06.jpg" alt="">
+                <img src="img/military/img07.jpg" alt="">
+            </div>
+
+            <!-- Heroes -->
+            <h3 class="category-title">Heroes & Action</h3>
+            <div class="grid-images">
+                <img src="img/heroes/img01.jpg" alt="">
+                <img src="img/heroes/img02.jpg" alt="">
+                <img src="img/heroes/img03.jpg" alt="">
+                <img src="img/heroes/img04.jpg" alt="">
+                <img src="img/heroes/img05.jpg" alt="">
+                <img src="img/heroes/img06.jpg" alt="">
+                <img src="img/heroes/img07.jpg" alt="">
+            </div>
+
+            <!-- Stages -->
+            <h3 class="category-title">Main City Stages</h3>
+            <div class="grid-images">
+                <img src="img/stages/img01.jpg" alt="">
+                <img src="img/stages/img02.jpg" alt="">
+            </div>
+        </section>
+
+        <footer>
+            <div>© Muzalevska Sofiya · Costume Designer</div>
+            <div>
+                Contact:
+                <a href="mailto:muzasophie07@gmail.com">muzasophie07@gmail.com</a> ·
+                <span>+381 61 291 65 22</span>
+            </div>
+        </footer>
+
+    </div>
+</div>
+
+<!-- =============== RUSSIAN VERSION =============== -->
+<div class="lang-block" id="lang-ru">
+    <div class="page">
+
+        <!-- HEADER RU -->
+        <header class="header">
+            <div class="header-title header-left-bar">
+                <h2>ХУДОЖНИК ПО КОСТЮМАМ</h2>
+                <h1>Muzalevska Sofiya</h1>
+
+                <p>
+                    Художник по костюмам с обширным международным опытом в полнометражном кино,
+                    театре, рекламных проектах и масштабных сценических постановках.
+                </p>
+
+                <div class="header-contacts">
+                    <div>Сербия · Готова к международным проектам</div>
+                    <div>Есть разрешения на работу: США, Канада, Евросоюз и Балканские страны</div>
+                    <div>Email: <a href="mailto:muzasophie07@gmail.com">muzasophie07@gmail.com</a></div>
+                    <div>Телефон (RS): +381 61 291 65 22</div>
+                    <div>WhatsApp / Telegram: +7 911 167 53 41</div>
+                    <div>Instagram: <a href="https://instagram.com/muzasophie" target="_blank">@muzasophie</a></div>
+                    <div>YouTube:
+                        <a href="https://www.youtube.com/playlist?list=PLxXoCrSmb41ChRIPRiOn4FfgVsexII0sk" target="_blank">
+                            Портфолио-плейлист
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portrait-wrapper">
+                <img src="img/portrait.jpg" alt="Портрет Muzalevska Sofiya" class="portrait-img">
+                <div class="portrait-overlay"></div>
+                <div class="tagline">FILM · THEATRE · COMMERCIAL · LIVE SHOWS</div>
+            </div>
+        </header>
+
+        <!-- FILMOGRAPHY RU -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-title"><span>Фильмо</span>графия</div>
+                <div class="section-subtitle">Избранные работы</div>
+            </div>
+
+            <div class="grid-two">
+                <div class="list-block">
+                    <h3>Полнометражные фильмы</h3>
+                    <ul>
+                        <li>2025 – MINOTAUR (Латвия), реж. А.Звягинцев, опер. М.Кричман</li>
+                        <li>2024 – Ultima Thule (Сербия), реж. О.Пинсон, опер. М.Кричман</li>
+                        <li>2023 – Маски (Сербия), реж. К. Пчелинцева</li>
+                        <li>2021 – Tiger-3 (Индия), реж. Maneesh Sharma</li>
+                        <li>2021 – Crime and Punishment (Великобритания), реж. Enni Red</li>
+                        <li>2019 – Тень звезды, реж. Д. Губарев</li>
+                        <li>2019 – Буран, реж. Айнур Аскаров</li>
+                        <li>2019 – Чувствовать, реж. В. Салтыков</li>
+                        <li>2018 – Небо измеряется Милями, реж. К. Буслов, опер. И. Гудков)</li>
+                        <li>2018 – Иду на Неву (т/к МИР)</li>
+                        <li>2017 – Танки, реж. К. Дружинин, опер. Д. Трифонов</li>
+                        <li>2017 – Куда течёт море, реж. В. Салтыков, опер. М. Эфрос</li>
+                        <li>2016 – Обгоняя Время, реж. Л. Пляскин, опер. Д. Трифонов</li>
+                        <li>2014 – Диггеры, реж. Г. Корнев, Г. Егоров</li>
+                        <li>2014 – Икар, реж. В. Салтыков, опер. М. Эфрос</li>
+                    </ul>
+                </div>
+
+                <div class="list-block">
+                    <h3>Телепроекты</h3>
+                    <ul>
+                        <li>2017 – Арктические войска, ТНТ · реж. Д. Иосифов, опер. И. Гудков</li>
+                        <li>2017 – Никому не говори, Россия · реж. Д. Сорокин, опер. Г. Георгиев</li>
+                        <li>2015 – Лучше не бывает, Первый Канал · реж. Е. Семенов, опер. А. Вакорин</li>
+                        <li>2015 – Новогоднее счастье, НТВ · реж. И. Казанков, опер. Г. Георгиев</li>
+                        <li>2013 – Охотник за головами · реж. С. Малюгов, опер. В. Гончар</li>
+                        <li>2013 – Письма на стекле · реж. Р. Грицкова</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- THEATRE RU -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-title"><span>Театр</span> и опера</div>
+                <div class="section-subtitle">Опера и драматические постановки</div>
+            </div>
+
+            <div class="grid-two">
+                <div class="list-block">
+                    <h3>Избранные постановки</h3>
+                    <ul>
+                        <li>Obična priča (Сербия), реж. Кирилл Серебренников</li>
+                        <li>Mürder unter uns (Швейцария), реж. Eberhard Köhler · Stadttheater Bern</li>
+                        <li>Пьяные, реж.Андрей Могучий · БДТ им. Г.А. Товстоногова</li>
+                        <li>Царская невеста (опера), реж. А. Могучий · Михайловский театр</li>
+                        <li>Урод, реж. Д. Корогодский · Театр Поколений</li>
+                        <li>Подтвердите, что вы человек, реж. В. Левицкий · Театр Поколений</li>
+                    </ul>
+                </div>
+
+                <div class="list-block">
+                    <h3>Подход к сцене</h3>
+                    <p>
+                        От камерных спектаклей до главных оперных сцен города —
+                        София создаёт выразительные силуэты и костюмные миры,
+                        выстраивая характер через ткань, фактуру и детали
+                        в тесном сотрудничестве с режиссёрами, хореографами и художниками по свету.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMMERCIAL & EVENTS RU -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-title"><span>Ком</span>мерческие проекты</div>
+                <div class="section-subtitle">Бренды, кампании и крупные live-шоу</div>
+            </div>
+
+            <div class="grid-two">
+                <div class="list-block">
+                    <h3>Реклама и бренды</h3>
+                    <ul>
+                        <li>SkyFrame (USA)</li>
+                        <li>Сбер</li>
+                        <li>IQOS</li>
+                        <li>Naked Hearts Foundation</li>
+                        <li>Агуша</li>
+                        <li>Sportlife cеть спортивных клубов</li>
+                        <li>Кондитерский концерн «Славянка»</li>
+                        <li>G Energy · Газпром</li>
+                        <li>FIFA 2018</li>
+                        <li>Estel Professional</li>
+                        <li>Газпромнефть Шельф</li>
+                        <li>Поезд ГрандЭкспресс</li>
+                        <li>Four Seasons сеть отелей</li>
+                        <li>Клиника Согаз</li>
+                        <li>Эргоферон</li>
+                    </ul>
+                </div>
+
+                <div class="list-block">
+                    <h3>Крупные события</h3>
+                    <ul>
+                        <li>Алые Паруса – мульти сценическое шоу в прямом эфире · 2018–2022</li>
+                        <li>Алые Паруса 2019 – приз Best Event Awards World</li>
+                        <li>Бабкины сказки – Театр русской песни Надежды Бабкиной · 2021</li>
+                        <li>Юбилейный концерт Стаса Михайлова в Кремле · 2019</li>
+                        <li>Кристина Агилера – The X Tour · европейский тур 2019</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- VISUAL PORTFOLIO RU -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-title"><span>Визу</span>альное портфолио</div>
+                <div class="section-subtitle">Выбранные категории</div>
+            </div>
+
+            <h3 class="category-title">Реклама / Commercial</h3>
+            <div class="grid-images">
+                <img src="img/commercial/img01.jpg" alt="">
+                <img src="img/commercial/img02.jpg" alt="">
+                <img src="img/commercial/img03.jpg" alt="">
+                <img src="img/commercial/img04.jpg" alt="">
+            </div>
+
+            <h3 class="category-title">Театр и опера</h3>
+            <div class="grid-images">
+                <img src="img/theater/img01.jpg" alt="">
+                <img src="img/theater/img02.jpg" alt="">
+                <img src="img/theater/img03.jpg" alt="">
+                <img src="img/theater/img04.jpg" alt="">
+                <img src="img/theater/img05.jpg" alt="">
+                <img src="img/theater/img06.jpg" alt="">
+                <img src="img/theater/img07.jpg" alt="">
+                <img src="img/theater/img08.jpg" alt="">
+                <img src="img/theater/img09.jpg" alt="">
+            </div>
+
+            <h3 class="category-title">Fashion</h3>
+            <div class="grid-images">
+                <img src="img/fashion/img01.jpg" alt="">
+                <img src="img/fashion/img02.jpg" alt="">
+                <img src="img/fashion/img03.jpg" alt="">
+                <img src="img/fashion/img04.jpg" alt="">
+                <img src="img/fashion/img05.jpg" alt="">
+                <img src="img/fashion/img06.jpg" alt="">
+                <img src="img/fashion/img07.jpg" alt="">
+            </div>
+
+            <h3 class="category-title">Исторические фильмы</h3>
+            <div class="grid-images">
+                <img src="img/historical/img01.jpg" alt="">
+                <img src="img/historical/img02.jpg" alt="">
+                <img src="img/historical/img03.jpg" alt="">
+                <img src="img/historical/img04.jpg" alt="">
+                <img src="img/historical/img05.jpg" alt="">
+                <img src="img/historical/img06.jpg" alt="">
+                <img src="img/historical/img07.jpg" alt="">
+                <img src="img/historical/img08.jpg" alt="">
+                <img src="img/historical/img09.jpg" alt="">
+                <img src="img/historical/img10.jpg" alt="">
+                <img src="img/historical/img11.jpg" alt="">
+                <img src="img/historical/img12.jpg" alt="">
+                <img src="img/historical/img13.jpg" alt="">
+                <img src="img/historical/img14.jpg" alt="">
+                <img src="img/historical/img15.jpg" alt="">
+                <img src="img/historical/img16.jpg" alt="">
+                <img src="img/historical/img17.jpg" alt="">
+                <img src="img/historical/img18.jpg" alt="">
+            </div>
+
+            <h3 class="category-title">Военные костюмы</h3>
+            <div class="grid-images">
+                <img src="img/military/img01.jpg" alt="">
+                <img src="img/military/img02.jpg" alt="">
+                <img src="img/military/img03.jpg" alt="">
+                <img src="img/military/img04.jpg" alt="">
+                <img src="img/military/img05.jpg" alt="">
+                <img src="img/military/img06.jpg" alt="">
+                <img src="img/military/img07.jpg" alt="">
+            </div>
+
+            <h3 class="category-title">Герои и экшен</h3>
+            <div class="grid-images">
+                <img src="img/heroes/img01.jpg" alt="">
+                <img src="img/heroes/img02.jpg" alt="">
+                <img src="img/heroes/img03.jpg" alt="">
+                <img src="img/heroes/img04.jpg" alt="">
+                <img src="img/heroes/img05.jpg" alt="">
+                <img src="img/heroes/img06.jpg" alt="">
+                <img src="img/heroes/img07.jpg" alt="">
+            </div>
+
+            <h3 class="category-title">Главные городские сцены</h3>
+            <div class="grid-images">
+                <img src="img/stages/img01.jpg" alt="">
+                <img src="img/stages/img02.jpg" alt="">
+            </div>
+        </section>
+
+        <footer>
+            <div>© Muzalevska Sofiya · Художник по костюмам</div>
+            <div>
+                Контакты:
+                <a href="mailto:muzasophie07@gmail.com">muzasophie07@gmail.com</a> ·
+                <span>+381 61 291 65 22</span>
+            </div>
+        </footer>
+
+    </div>
+</div>
+
+<!-- LIGHTBOX OVERLAY (общий для обоих языков) -->
+<div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-close" id="lightboxClose">&times;</div>
+    <div class="lightbox-arrow left" id="lightboxPrev">&#10094;</div>
+    <img id="lightboxImg" src="" alt="">
+    <div class="lightbox-arrow right" id="lightboxNext">&#10095;</div>
+</div>
+
+<script>
+    // ========== LANGUAGE SWITCHER ==========
+    (function () {
+        const langBlocks = {
+            en: document.getElementById('lang-en'),
+            ru: document.getElementById('lang-ru')
+        };
+        const langBtns = document.querySelectorAll('.lang-btn');
+
+        function setLang(lang) {
+            Object.keys(langBlocks).forEach(code => {
+                langBlocks[code].classList.toggle('active', code === lang);
+            });
+            langBtns.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+            document.documentElement.lang = lang === 'ru' ? 'ru' : 'en';
+        }
+
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => setLang(btn.dataset.lang));
+        });
+
+        setLang('en');
+    })();
+
+    // ========== LIGHTBOX + ARROWS + SWIPE ==========
+    (function () {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const btnClose = document.getElementById('lightboxClose');
+        const btnPrev = document.getElementById('lightboxPrev');
+        const btnNext = document.getElementById('lightboxNext');
+
+        const images = Array.from(document.querySelectorAll('.grid-images img'));
+        let currentIndex = -1;
+
+        function openLightbox(index) {
+            if (!images.length) return;
+            currentIndex = index;
+            lightboxImg.src = images[currentIndex].src;
+            lightbox.classList.add('active');
+        }
+
+        function showNext() {
+            if (!images.length) return;
+            currentIndex = (currentIndex + 1) % images.length;
+            lightboxImg.src = images[currentIndex].src;
+        }
+
+        function showPrev() {
+            if (!images.length) return;
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            lightboxImg.src = images[currentIndex].src;
+        }
+
+        images.forEach((img, index) => {
+            img.addEventListener('click', () => openLightbox(index));
+        });
+
+        btnClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+
+        btnNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showNext();
+        });
+
+        btnPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showPrev();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+            } else if (e.key === 'ArrowRight') {
+                showNext();
+            } else if (e.key === 'ArrowLeft') {
+                showPrev();
+            }
+        });
+
+        // Touch swipe
+        let touchStartX = 0;
+
+        lightbox.addEventListener('touchstart', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            const touch = e.changedTouches[0];
+            touchStartX = touch.clientX;
+        }, {passive: true});
+
+        lightbox.addEventListener('touchend', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            const touch = e.changedTouches[0];
+            const diffX = touch.clientX - touchStartX;
+            if (Math.abs(diffX) > 40) {
+                if (diffX < 0) {
+                    showNext();
+                } else {
+                    showPrev();
+                }
+            }
+        }, {passive: true});
+    })();
+</script>
+
+</body>
+</html>
